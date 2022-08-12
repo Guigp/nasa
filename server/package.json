@@ -1,0 +1,41 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "jest --detectOpenHandles",
+    "test-watch": "jest --watchAll",
+    "watch": "nodemon src/server.js",
+    "start": "node src/server.js",
+    "cluster": "pm2 start src/server.js -i max",
+    "cluster-logs": "pm2 logs --lines 200",
+    "cluster-list": "pm2 list",
+    "cluster-restart": "pm2 restart server",
+    "cluster-reload": "pm2 reload server",
+    "cluster-delete": "pm2 delete server",
+    "cluster-monit": "pm2 monit"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "dependencies": {
+    "cookie-session": "^2.0.0",
+    "cors": "^2.8.5",
+    "csv-parse": "^5.0.4",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "jest": "^26.6.3",
+    "mongoose": "^6.5.0",
+    "passport": "^0.5.3",
+    "passport-google-oauth20": "^2.0.0",
+    "pm2": "^5.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16",
+    "supertest": "^6.2.3"
+  }
+}
