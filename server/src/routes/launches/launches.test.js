@@ -1,10 +1,12 @@
 const app = require("../../app");
 const request = require("supertest");
 const { mongoConnect, mongoDisconnect } = require("../../services/mongo");
+const { loadPlanets } = require("../../models/planets.model");
 
 describe("Launches API", () => {
   beforeAll(async () => {
     await mongoConnect(); //primeiro conecta no mongo antes de rodar todos testes, do contrtario da erro pois os testes rodam antes de conectar pois server não é chamado aqui
+    await loadPlanets();
   });
 
   afterAll(async () => {
